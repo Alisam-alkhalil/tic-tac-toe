@@ -84,6 +84,17 @@ def check_win(tic):
          print("\n")
          print(f"Player {tic[x[0]-1]} wins!")
          exit()
+   
+   if " " not in tic:
+      print("\n")
+      print(f"{tic[0]} | {tic[1]} | {tic[2]}")
+      print("--+---+--")
+      print(f"{tic[3]} | {tic[4]} | {tic[5]}")
+      print("--+---+--")
+      print(f"{tic[6]} | {tic[7]} | {tic[8]}")
+      print("\n")
+      print("Draw!")
+      exit()
          
 def main():
 
@@ -98,7 +109,7 @@ def main():
    while True:
 
       print_board(tic, tac)
-      print("X's turn")
+      print(f"{players[round%2]}'s turn")
       tic = play(tic, players[round%2])
       check_win(tic)
       round +=1
